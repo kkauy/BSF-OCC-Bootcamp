@@ -17,3 +17,5 @@ git branch -a  - list all branches
 git switch branchName - switch to a branch , * : current branch
 git branch -d branchName - delete a branch if merged in a master branch
 git merge branchName - combine code from another branch into the current one
+
+git checkout commitID  - seeing state of the code in a particular commit
