@@ -1,3 +1,7 @@
 Configuration Commands
 
 git  config --global user.name your-username - change username
+
+git add 
+git status 
+git rm --cached filename - remove from staging area
