@@ -9,3 +9,6 @@ git reset - remove all files in staging area
 git rm --cached filename - remove from staging area
 git log
 git log --oneline -- shorten git history
+git branch branchName - create a new branch
+git branch -a  - list all branches
+git switch branchName - switch to a branch , * : current branch
