@@ -1,2 +1,3 @@
-Omelette
-oatmal
+Breakfast:Omelette,oatmal
+Lunch: yogurt 
+Dinner: rice, veggie
