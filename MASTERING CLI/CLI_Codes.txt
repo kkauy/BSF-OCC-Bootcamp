@@ -1,0 +1,5 @@
+pwd - present working directory
+touch - create a new file/ directory
+rm - remove a file/directory
+mv - rename a file
+cd - change directory
