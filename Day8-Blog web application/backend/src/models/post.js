@@ -1,9 +1,7 @@
 //post.js
 
-
 //Import Mongoose
 const mongoose = require('mongoose');
-
 
 //Create Schema for the Post model
 const postSchema = new mongoose.Schema({

@@ -3,11 +3,19 @@ const express = require('express');
 const mongoose = require('mongoose');
 require('dotenv').config();
 
-//Initialize Express App
+//Make an instance of Express App
 const app = express();
 
 //Middleware
 app.use(express.json());
+app.use((req,res,next) => {
+   console.log(req.path, req.method);
+   if (req.body) {
+      console.log('Request body :');
+      console.log(req.body);
+   }
+   next();
+}); 
 
 
 //Routes
