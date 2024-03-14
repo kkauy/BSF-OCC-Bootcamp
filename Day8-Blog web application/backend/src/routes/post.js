@@ -4,12 +4,14 @@ const router = express.Router();
 const {
     createPost,
     getAllPost,
-    getPost
+    getPost,
+    updatePost
 } = require('../controllers/post');
 
 //Create Routers 
 router.post('/', createPost);
 router.get('/', getAllPost);
-router.post('/:id', getPost);
+router.get('/:id', getPost);
+router.patch('/:id', updatePost);
 
 module.exports = router;

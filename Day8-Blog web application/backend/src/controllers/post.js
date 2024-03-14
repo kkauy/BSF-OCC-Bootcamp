@@ -36,7 +36,7 @@ const getAllPost = async(req,res) => {
 
 //Get a single post 
 const getPost = async (req,res) => { 
-    const {id} = req.param;
+    const {id} = req.params;
     try {
         const post = await Post.findById(id);
         if (!post) return res.status(404).json({message: 'Post not found'});
@@ -44,11 +44,35 @@ const getPost = async (req,res) => {
     } catch (error) {
         res.status(400).json({error: error.message});
     }
-} 
+}
+
+//Update a post  U of CRUD
+const updatePost = async (req,res) => {
+    const {id} = req.params;
+    try {
+        const post = await Post.findOneAndUpdate(
+            {_id: id}, // _id is to expected to matched
+            {...req.body},
+            {new: true, runValidators: true}
+        );
+        if(!post) {
+            return res.status(404).json({
+                error: 'Not matching post found'
+            });
+        };
+        res.status(200).json({
+            message: "The post has been successfully updated",
+            post
+        })        
+    } catch (error) {
+        res.status(400).json({error: error.message}); 
+    }
+}
 
 module.exports = { 
     createPost, 
     getAllPost,
-    getPost 
+    getPost,
+    updatePost
 };
 
